@@ -19,7 +19,7 @@ void register_gdnet3_types() {
 	ClassDB::register_class<GDNetAddress>();
 
 	if (penet_initialize() != 0)
-		CRASH_NOW_MSG("Unable to initialize PENet");
+		ERR_FAIL_COND_MSG("penet_initialize() != 0","Unable to initialize PENet");
 }
 
 void unregister_gdnet3_types() {
